@@ -1,7 +1,5 @@
 package hochschuledarmstadt.quizapp;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.content.res.AssetManager;
 import android.support.annotation.NonNull;
 
@@ -137,8 +135,8 @@ public class Quiz {
     public void render(){
         selectQuestion();
         if (isRadioButtonChecked())
-            quizView.checkRadioButton(selectedRadioButtonId);
-        quizView.setAnswerButtonEnabled(isRadioButtonChecked());
+            quizView.checkPossibleAnswer(selectedRadioButtonId);
+        quizView.setAnswerButtonEnabledOrDisabled(isRadioButtonChecked());
     }
 
     private boolean isRadioButtonChecked() {
@@ -153,25 +151,25 @@ public class Quiz {
     private void selectQuestion() {
         currentQuestion = questions.get(currentQuestionIndex);
         for (int index = 0; index < AMOUNT_OF_POSSIBLE_ANSWERS; index++) {
-            quizView.setRadioButtonText(index, currentQuestion.getPossibleAnswer(index));
+            quizView.renderPossibleAnswer(index, currentQuestion.getPossibleAnswer(index));
         }
-        quizView.setQuestion(currentQuestion.getQuestionText());
+        quizView.renderQuestion(currentQuestion.getQuestionText());
         setSubtitle();
     }
 
     private void setSubtitle() {
         int currentQuestionPosition = currentQuestionIndex + 1;
         int maxQuestionsAvailable = questions.size();
-        quizView.setActionBarSubtitle(String.format(subtitleFormatString, currentQuestionPosition, maxQuestionsAvailable));
+        quizView.renderActionBarSubtitle(String.format(subtitleFormatString, currentQuestionPosition, maxQuestionsAvailable));
     }
 
     public void setCheckedRadioButtonId(int checkedRadioButtonId) {
         this.selectedRadioButtonId = checkedRadioButtonId;
-        quizView.setAnswerButtonEnabled(true);
+        quizView.setAnswerButtonEnabledOrDisabled(true);
     }
 
     public void submitAnswer() {
-        final int index = quizView.getIndexInRadioGroupFor(selectedRadioButtonId);
+        final int index = quizView.getIndexOfRadioButtonInRadioGroupFor(selectedRadioButtonId);
         String answer = getSelectedAnswer(index);
         updateAnswersMade(answer);
         if (!isNextQuestionAvailable()) {
@@ -181,7 +179,7 @@ public class Quiz {
             selectNextQuestion();
             quizView.clearCheckedRadioButton();
             selectedRadioButtonId = -1;
-            quizView.setAnswerButtonEnabled(false);
+            quizView.setAnswerButtonEnabledOrDisabled(false);
         }
     }
 
@@ -204,7 +202,7 @@ public class Quiz {
         currentQuestionIndex = 0;
         selectedRadioButtonId = -1;
         quizView.clearCheckedRadioButton();
-        quizView.setAnswerButtonEnabled(false);
+        quizView.setAnswerButtonEnabledOrDisabled(false);
     }
 
     private String getSelectedAnswer(int index) {

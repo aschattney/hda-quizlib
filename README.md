@@ -3,5 +3,5 @@
 
 # Gradle
 ```gradle
-compile 'hochschuledarmstadt.quizapp:quizlib:1.0'
+compile 'hochschuledarmstadt.quizapp:quizlib:1.1'
 ```

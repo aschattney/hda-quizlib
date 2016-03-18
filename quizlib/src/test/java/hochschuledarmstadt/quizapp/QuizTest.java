@@ -102,7 +102,7 @@ public class QuizTest {
     @Test
     public void interpretsAnswerAsCorrectAnswer() {
 
-        when(quizView.getIndexInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(0);
+        when(quizView.getIndexOfRadioButtonInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(0);
 
         quiz.render();
         quiz.setCheckedRadioButtonId(CHECKED_RADIO_BUTTON_ID);
@@ -118,7 +118,7 @@ public class QuizTest {
         quiz.setCheckedRadioButtonId(CHECKED_RADIO_BUTTON_ID);
 
         reset(quizView);
-        when(quizView.getIndexInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
+        when(quizView.getIndexOfRadioButtonInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
 
         quiz.submitAnswer();
 
@@ -130,7 +130,7 @@ public class QuizTest {
     @Test
     public void notifiesWhenQuizHasFinished() {
 
-        when(quizView.getIndexInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
+        when(quizView.getIndexOfRadioButtonInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
 
         quiz.render();
         quiz.setCheckedRadioButtonId(CHECKED_RADIO_BUTTON_ID);
@@ -147,7 +147,7 @@ public class QuizTest {
     @Test
     public void quizResetsWhenLastQuestionAnswered() {
 
-        when(quizView.getIndexInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
+        when(quizView.getIndexOfRadioButtonInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
 
         quiz.render();
         quiz.setCheckedRadioButtonId(CHECKED_RADIO_BUTTON_ID);
@@ -175,7 +175,7 @@ public class QuizTest {
     @Test
     public void canRestoreQuizState() {
 
-        when(quizView.getIndexInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
+        when(quizView.getIndexOfRadioButtonInRadioGroupFor(CHECKED_RADIO_BUTTON_ID)).thenReturn(1);
 
         QuizState quizState = new QuizState();
         quizState.setWrongAnswers(0);

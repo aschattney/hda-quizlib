@@ -4,12 +4,12 @@ package hochschuledarmstadt.quizapp;
  * Created by Andreas Schattney on 14.01.2016.
  */
 public interface QuizView {
-    void setRadioButtonText(int index, String text);
+    void renderPossibleAnswer(int index, String text);
     void clearCheckedRadioButton();
-    void setQuestion(String text);
-    void setActionBarSubtitle(String text);
-    void checkRadioButton(final int radioButtonId);
-    void setAnswerButtonEnabled(boolean enabled);
+    void renderQuestion(String text);
+    void renderActionBarSubtitle(String text);
+    void checkPossibleAnswer(final int radioButtonId);
+    void setAnswerButtonEnabledOrDisabled(boolean enabled);
     void onQuizEnd(final int correctAnswers, final int wrongAnswers);
-    int getIndexInRadioGroupFor(final int radioButtonId);
+    int getIndexOfRadioButtonInRadioGroupFor(final int radioButtonId);
 }
