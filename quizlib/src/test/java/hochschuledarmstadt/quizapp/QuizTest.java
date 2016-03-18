@@ -73,20 +73,20 @@ public class QuizTest {
     @Test
     public void canRenderQuestion() {
         quiz.render();
-        verify(quizView).setQuestion(FIRST_QUESTION);
-        verify(quizView).setActionBarSubtitle(String.format(Quiz.DEFAULT_SUBTITLE_FORMAT, 1, 3));
-        verify(quizView).setAnswerButtonEnabled(false);
+        verify(quizView).renderQuestion(FIRST_QUESTION);
+        verify(quizView).renderActionBarSubtitle(String.format(Quiz.DEFAULT_SUBTITLE_FORMAT, 1, 3));
+        verify(quizView).setAnswerButtonEnabledOrDisabled(false);
     }
 
     @Test
     public void rendersProperly(){
         quiz.render();
 
-        verify(quizView).setQuestion(FIRST_QUESTION);
-        verify(quizView).setRadioButtonText(0, FIRST_ANSWER);
-        verify(quizView).setRadioButtonText(1, SECOND_ANSWER);
-        verify(quizView).setRadioButtonText(2, THIRD_ANSWER);
-        verify(quizView).setRadioButtonText(3, FOURTH_ANSWER);
+        verify(quizView).renderQuestion(FIRST_QUESTION);
+        verify(quizView).renderPossibleAnswer(0, FIRST_ANSWER);
+        verify(quizView).renderPossibleAnswer(1, SECOND_ANSWER);
+        verify(quizView).renderPossibleAnswer(2, THIRD_ANSWER);
+        verify(quizView).renderPossibleAnswer(3, FOURTH_ANSWER);
     }
 
     @Test
@@ -95,8 +95,8 @@ public class QuizTest {
         quiz.setCheckedRadioButtonId(CHECKED_RADIO_BUTTON_ID);
         quiz.submitAnswer();
 
-        verify(quizView).getIndexInRadioGroupFor(CHECKED_RADIO_BUTTON_ID);
-        verify(quizView).setQuestion(SECOND_QUESTION);
+        verify(quizView).getIndexOfRadioButtonInRadioGroupFor(CHECKED_RADIO_BUTTON_ID);
+        verify(quizView).renderQuestion(SECOND_QUESTION);
     }
 
     @Test
@@ -122,7 +122,7 @@ public class QuizTest {
 
         quiz.submitAnswer();
 
-        verify(quizView).setAnswerButtonEnabled(false);
+        verify(quizView).setAnswerButtonEnabledOrDisabled(false);
 
         assertEquals(1, quiz.getWrongAnswers());
     }
