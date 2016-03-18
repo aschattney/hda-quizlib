@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Was ist die Hauptstadt von Deutschland?",
+    "possibleAnswers": [
+      "Berlin",
+      "Bern",
+      "Warschau",
+      "Zürich"
+    ],
+    "correctAnswer": "Berlin"
+  },
+  {
+    "text": "Mit welchem Schlüsselwort sperrt man einen kritischen Bereich in Java",
+    "possibleAnswers": [
+      "final",
+      "block",
+      "lock",
+      "synchronized"
+    ],
+    "correctAnswer": "synchronized"
+  }
+]

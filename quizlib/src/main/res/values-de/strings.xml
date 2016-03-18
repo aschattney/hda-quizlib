@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="submit">Antworten</string>
+    <string name="error_creating_questions">Error creating questions from json object</string>
+    <string name="error_reading_questions">Error reading questions from assets folder</string>
+    <string name="questions_filename">questions.json</string>
+    <string name="please_select_an_answer">Bitte wählen Sie eine Antwort aus</string>
+    <string name="result_format">Es wurden %1$s Fragen richtig beantwortet und %2$s Fragen falsch beantwortet</string>
+    <string name="subtitle_question">Frage %1$s / %2$s</string>
+    <string name="close_app">App schließen</string>
+</resources>
