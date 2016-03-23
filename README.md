@@ -8,4 +8,4 @@ compile 'hochschuledarmstadt.quizapp:quizlib:1.2'
 
 # Verwendung
 
-<a href="https://github.com/aschattney/hda-quizlib/">Wiki</a>
+<a href="https://github.com/aschattney/hda-quizlib/wiki">Wiki</a>
