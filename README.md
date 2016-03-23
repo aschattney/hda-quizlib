@@ -5,3 +5,7 @@
 ```gradle
 compile 'hochschuledarmstadt.quizapp:quizlib:1.2'
 ```
+
+# Verwendung
+
+<a href="https://github.com/aschattney/hda-quizlib/">Wiki</a>
