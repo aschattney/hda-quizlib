@@ -136,7 +136,10 @@ public class Quiz {
         selectQuestion();
         if (isRadioButtonChecked())
             quizView.checkPossibleAnswer(selectedRadioButtonId);
-        quizView.setAnswerButtonEnabledOrDisabled(isRadioButtonChecked());
+        if (isRadioButtonChecked())
+            quizView.setAnswerButtonEnabled();
+        else
+            quizView.setAnswerButtonDisabled();
     }
 
     private boolean isRadioButtonChecked() {
@@ -165,7 +168,7 @@ public class Quiz {
 
     public void setCheckedRadioButtonId(int checkedRadioButtonId) {
         this.selectedRadioButtonId = checkedRadioButtonId;
-        quizView.setAnswerButtonEnabledOrDisabled(true);
+        quizView.setAnswerButtonEnabled();
     }
 
     public void submitAnswer() {
@@ -179,7 +182,7 @@ public class Quiz {
             selectNextQuestion();
             quizView.clearCheckedRadioButton();
             selectedRadioButtonId = -1;
-            quizView.setAnswerButtonEnabledOrDisabled(false);
+            quizView.setAnswerButtonDisabled();
         }
     }
 
@@ -202,7 +205,7 @@ public class Quiz {
         currentQuestionIndex = 0;
         selectedRadioButtonId = -1;
         quizView.clearCheckedRadioButton();
-        quizView.setAnswerButtonEnabledOrDisabled(false);
+        quizView.setAnswerButtonDisabled();
     }
 
     private String getSelectedAnswer(int index) {

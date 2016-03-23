@@ -75,7 +75,7 @@ public class QuizTest {
         quiz.render();
         verify(quizView).renderQuestion(FIRST_QUESTION);
         verify(quizView).renderActionBarSubtitle(String.format(Quiz.DEFAULT_SUBTITLE_FORMAT, 1, 3));
-        verify(quizView).setAnswerButtonEnabledOrDisabled(false);
+        verify(quizView).setAnswerButtonDisabled();
     }
 
     @Test
@@ -122,7 +122,7 @@ public class QuizTest {
 
         quiz.submitAnswer();
 
-        verify(quizView).setAnswerButtonEnabledOrDisabled(false);
+        verify(quizView).setAnswerButtonDisabled();
 
         assertEquals(1, quiz.getWrongAnswers());
     }
