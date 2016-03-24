@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by Andreas Schattney on 14.01.2016.
  */
-public class QuizState implements Parcelable {
+class QuizState implements Parcelable {
 
     private ArrayList<Question> questions;
     private int currentQuestionIndex = 0;

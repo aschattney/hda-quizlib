@@ -14,7 +14,7 @@ import java.util.Collections;
 /**
  * Created by Andreas Schattney on 22.12.2015.
  */
-public class Question implements Parcelable {
+class Question implements Parcelable {
 
     public static final String JSON_KEY_TEXT = "text";
     public static final String JSON_KEY_POSSIBLE_ANSWERS = "possibleAnswers";

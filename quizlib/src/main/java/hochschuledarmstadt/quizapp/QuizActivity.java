@@ -14,7 +14,11 @@ import java.io.IOException;
 public abstract class QuizActivity extends AppCompatActivity implements QuizView {
 
     private static final String TAG = QuizActivity.class.getName();
-    protected Quiz quiz;
+    private QuizImpl quiz;
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,7 @@ public abstract class QuizActivity extends AppCompatActivity implements QuizView
         }
     }
 
-    private Quiz buildQuiz(Bundle savedInstanceState) throws IOException, JSONException {
+    private QuizImpl buildQuiz(Bundle savedInstanceState) throws IOException, JSONException {
         if (savedInstanceState == null) {
             return createQuiz();
         } else {
@@ -47,19 +51,19 @@ public abstract class QuizActivity extends AppCompatActivity implements QuizView
         }
     }
 
-    private Quiz createQuiz() throws IOException, JSONException {
-        return Quiz.createNew(getAssets(), getString(R.string.questions_filename));
+    private QuizImpl createQuiz() throws IOException, JSONException {
+        return QuizImpl.createNew(getAssets(), getString(R.string.questions_filename));
     }
 
-    private Quiz restoreQuiz(Bundle savedInstanceState) {
-        QuizState quizState = savedInstanceState.getParcelable(Quiz.SAVED_STATE_KEY);
-        return Quiz.restoreFrom(quizState);
+    private QuizImpl restoreQuiz(Bundle savedInstanceState) {
+        QuizState quizState = savedInstanceState.getParcelable(QuizImpl.SAVED_STATE_KEY);
+        return QuizImpl.restoreFrom(quizState);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(Quiz.SAVED_STATE_KEY, quiz.saveInstanceState());
+        outState.putParcelable(QuizImpl.SAVED_STATE_KEY, quiz.saveInstanceState());
     }
 
 }

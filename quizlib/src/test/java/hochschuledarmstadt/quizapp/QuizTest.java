@@ -35,7 +35,7 @@ public class QuizTest {
     public static final int AMOUNT_OF_QUESTIONS_IN_QUIZ = 3;
 
     private QuizView quizView;
-    private Quiz quiz;
+    private QuizImpl quiz;
 
     private Question buildQuestion(String question) {
         String[] s = {FIRST_ANSWER, SECOND_ANSWER, THIRD_ANSWER, FOURTH_ANSWER};
@@ -47,7 +47,7 @@ public class QuizTest {
     public void setUp() {
         quizView = mock(QuizView.class);
         ArrayList<Question> questions = buildQuestions();
-        quiz = new Quiz(questions);
+        quiz = new QuizImpl(questions);
         quiz.setQuizView(quizView);
     }
 
@@ -74,7 +74,7 @@ public class QuizTest {
     public void canRenderQuestion() {
         quiz.render();
         verify(quizView).renderQuestion(FIRST_QUESTION);
-        verify(quizView).renderActionBarSubtitle(String.format(Quiz.DEFAULT_SUBTITLE_FORMAT, 1, 3));
+        verify(quizView).renderActionBarSubtitle(String.format(QuizImpl.DEFAULT_SUBTITLE_FORMAT, 1, 3));
         verify(quizView).setAnswerButtonDisabled();
     }
 
@@ -183,7 +183,7 @@ public class QuizTest {
         quizState.setCurrentQuestionIndex(1);
         quizState.setSelectedRadioButtonId(CHECKED_RADIO_BUTTON_ID);
         quizState.setQuestions(buildQuestions());
-        Quiz quiz = Quiz.restoreFrom(quizState);
+        QuizImpl quiz = QuizImpl.restoreFrom(quizState);
         quiz.setQuizView(quizView);
         quiz.render();
         quiz.submitAnswer();
