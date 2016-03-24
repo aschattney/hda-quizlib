@@ -5,7 +5,7 @@ Diese Bibliothek ist Teil des Praktikums vom Kurs <i>Nutzerzentrierte Softwareen
 
 ## Gradle
 ```gradle
-compile 'hochschuledarmstadt.quizapp:quizlib:1.2'
+compile 'hochschuledarmstadt.quizapp:quizlib:1.3'
 ```
 
 ## Verwendung
