@@ -3,7 +3,7 @@
 
 ## Gradle
 ```gradle
-compile 'hochschuledarmstadt.quizapp:quizlib:1.5'
+compile 'hochschuledarmstadt.quizapp:quizlib:1.6'
 ```
 
 ## Verwendung
