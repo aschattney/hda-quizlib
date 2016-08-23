@@ -192,9 +192,10 @@ class QuizImpl implements Quiz{
         quizView.setAnswerButtonEnabled();
     }
 
-    public void submitAnswer() {
+    public boolean submitAnswer() {
         final int index = quizView.getIndexOfRadioButtonInRadioGroupFor(selectedRadioButtonId);
         String answer = getSelectedAnswer(index);
+        boolean result = isCorrectAnswer(answer);
         updateAnswersMade(answer);
         if (!isNextQuestionAvailable()) {
             quizView.onQuizEnd(correctAnswers, wrongAnswers);
@@ -205,6 +206,7 @@ class QuizImpl implements Quiz{
             selectedRadioButtonId = -1;
             quizView.setAnswerButtonDisabled();
         }
+        return result;
     }
 
     private void updateAnswersMade(String answer) {

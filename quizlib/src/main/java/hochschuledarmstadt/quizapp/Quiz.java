@@ -30,9 +30,10 @@ package hochschuledarmstadt.quizapp;
 public interface Quiz {
 
     /**
-     * Verwenden Sie diese Methode um die aktuelle Frage zu beantworten
+     * Verwenden Sie diese Methode um die aktuelle Frage zu beantworten. <br>
+     * @return {@code true}, wenn die Antwort richtig ist, ansonsten {@code false}
      */
-    void submitAnswer();
+    boolean submitAnswer();
 
     /**
      * Verwenden Sie diese Methode um der Applikationslogik den aktuell markierten RadioButton mit der Id {@code checkedRadioButtonId} mitzuteilen

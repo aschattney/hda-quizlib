@@ -1,15 +1,5 @@
 [
   {
-    "text": "Was ist die Hauptstadt von Deutschland?",
-    "possibleAnswers": [
-      "Berlin",
-      "Bern",
-      "Warschau",
-      "Zürich"
-    ],
-    "correctAnswer": "Berlin"
-  },
-  {
     "text": "Mit welchem Schlüsselwort sperrt man einen kritischen Bereich in Java",
     "possibleAnswers": [
       "final",
@@ -18,5 +8,85 @@
       "synchronized"
     ],
     "correctAnswer": "synchronized"
+  },
+  {
+    "text": "Sei F eine Unterklasse einer Klasse B (F extends B) und G eine generische Klasse. Dann gilt:",
+    "possibleAnswers": [
+      "G<B> = G<F>",
+      "G<B> ist eine Unterklasse von G<F>",
+      "G<F> ist eine Unterklasse von G<B>",
+      "G<F> ist keine Unterklasse von G<B>"
+    ],
+    "correctAnswer": "G<F> ist keine Unterklasse von G<B>"
+  },
+  {
+    "text": "Sei B eine Unterklasse von A und die Variable H vom Typ Collection<B>. Hierbei gilt:",
+    "possibleAnswers": [
+      "H kann nur Objekte des Typs A enthalten",
+      "H kann nur Objekte des Typs B enthalten",
+      "H kann Objekte des Typs A und B enthalten",
+      "H kann keine Objekte des Typs A und B enthalten"
+    ],
+    "correctAnswer": "H kann nur Objekte des Typs B enthalten"
+  },
+  {
+    "text": "Sei B eine Unterklasse von A und die Variable H vom Typ Collection<A>. Hierbei gilt:",
+    "possibleAnswers": [
+      "H kann nur Objekte des Typs A enthalten",
+      "H kann nur Objekte des Typs B enthalten",
+      "H kann Objekte des Typs A und B enthalten",
+      "H kann keine Objekte des Typs A und B enthalten"
+    ],
+    "correctAnswer": "H kann Objekte des Typs A und B enthalten"
+  },
+  {
+    "text": "boolean a = false;\nboolean b = a ? false : true;\nWelchen Wert besitzt b?",
+    "possibleAnswers": [
+      "Undefiniert, weil Fehler beim Kompilieren",
+      "true",
+      "Manchmal true, manchmal false",
+      "false"
+    ],
+    "correctAnswer": "true"
+  },
+  {
+    "text": "Welche der folgenden Aussagen ist falsch?",
+    "possibleAnswers": [
+      "In einem HashSet sind die Elemente nicht geordnet",
+      "In einem TreeSet sind die Elemente nach Werten geordnet",
+      "Der Zugriff auf Elemente in einem TreeSet ist schneller als auf Elemente in einem HashSet",
+      "Ein LinkedHashSet kann verwendet werden um Duplikate zu eliminieren"
+    ],
+    "correctAnswer": "Der Zugriff auf Elemente in einem TreeSet ist schneller als auf Elemente in einem HashSet"
+  },
+  {
+    "text": "Welche Aussage zu generischer Programmierung ist richtig?",
+    "possibleAnswers": [
+      "Generischer Programmierung ist die Kopplung von Algorithmen an spezifische Datenstrukturen und Datentypen",
+      "Durch generische Programmierung erreicht man in Java eine höhere Codeperformance",
+      "Generische Programmierung entfernt die Abhängigkeit von Algorithmen zu spezifischen Datenstrukturen und Datentypen",
+      "Generische Programmierung sollte man in jeder Situation einsetzen"
+    ],
+    "correctAnswer": "Generische Programmierung entfernt die Abhängigkeit von Algorithmen zu spezifischen Datenstrukturen und Datentypen"
+  },
+  {
+    "text": "Was ist ein Vorteil bei der Verwendung von Threads gegenüber Prozessen?",
+    "possibleAnswers": [
+      "Kommunikation zwischen Threads ist einfacher als zwischen Prozessen",
+      "Threads müssen nicht synchronisiert werden, da jeder Thread seinen eigenen Speicherbereich besitzt",
+      "Jeder Thread läuft in einem eigenen Prozess und besitzt Zugriff auf den gesamten Speicherbereich der Applikation",
+      "Es existiert kein Vorteil bei der Verwendung von Threads"
+    ],
+    "correctAnswer": "Kommunikation zwischen Threads ist einfacher als zwischen Prozessen"
+  },
+  {
+    "text": "Was ist ein kritischer Abschnitt?",
+    "possibleAnswers": [
+      "Zeitgleicher lesender und schreibender Zugriff von verschiedenen Threads auf eine gemeinsame Variable",
+      "Programmcode der die CPU zerstören kann",
+      "Beschreibt die benötigte Zeit beim Wechsel von Threads auf der CPU",
+      "Befindet sich innerhalb eines try-catch Blocks zur Behandlung von Exceptions"
+    ],
+    "correctAnswer": "Zeitgleicher lesender und schreibender Zugriff von verschiedenen Threads auf eine gemeinsame Variable"
   }
 ]
