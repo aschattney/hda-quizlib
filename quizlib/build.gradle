@@ -27,7 +27,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'hochschuledarmstadt.quizapp'
-version = '1.7'
+version = '1.8'
 
 android {
     compileSdkVersion 24

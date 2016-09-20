@@ -130,14 +130,8 @@ class QuizImpl implements Quiz{
         this.wrongAnswers = quizState.getWrongAnswers();
     }
 
-
-
     public void setQuizView(QuizView quizView) {
         this.quizView = quizView;
-    }
-
-    public void setSubtitleFormatString(String subtitleFormatString) {
-        this.subtitleFormatString = subtitleFormatString;
     }
 
     public QuizState saveInstanceState() {
@@ -155,8 +149,6 @@ class QuizImpl implements Quiz{
 
     public void render(){
         selectQuestion();
-        if (isRadioButtonChecked())
-            quizView.checkPossibleAnswer(selectedRadioButtonId);
         if (isRadioButtonChecked())
             quizView.setAnswerButtonEnabled();
         else

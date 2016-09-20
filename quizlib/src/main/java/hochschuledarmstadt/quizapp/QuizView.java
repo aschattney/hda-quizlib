@@ -27,7 +27,7 @@ package hochschuledarmstadt.quizapp;
 /**
  * Definiert die zu implementierenden Methoden in der Activity. <br>
  * Diese Methoden werden von der Applikationslogik aufgerufen. <br>
- * Innerhalb dieser Methoden sollen die UI aktualisiert werden.
+ * Innerhalb dieser Methoden soll das Userinterface aktualisiert werden.
  */
 public interface QuizView {
     /**
@@ -54,12 +54,6 @@ public interface QuizView {
      * @param subtitleText der Text
      */
     void renderActionBarSubtitle(String subtitleText);
-
-    /**
-     * In dieser Methode soll der RadioButton mit der Id {@code radioButtonId} als markiert gesetzt werden
-     * @param radioButtonId die id des RadioButtons
-     */
-    void checkPossibleAnswer(int radioButtonId);
 
     /**
      * In dieser Methode soll der Button aktiviert werden (setEnabled).

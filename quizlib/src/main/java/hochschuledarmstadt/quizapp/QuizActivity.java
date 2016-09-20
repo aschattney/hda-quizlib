@@ -68,11 +68,7 @@ public abstract class QuizActivity extends AppCompatActivity implements QuizView
     }
 
     private QuizImpl buildQuiz(Bundle savedInstanceState) throws IOException, JSONException {
-        if (savedInstanceState == null) {
-            return createQuiz();
-        } else {
-            return restoreQuiz(savedInstanceState);
-        }
+        return (savedInstanceState == null) ? createQuiz() : restoreQuiz(savedInstanceState);
     }
 
     private QuizImpl createQuiz() throws IOException, JSONException {
@@ -107,11 +103,6 @@ public abstract class QuizActivity extends AppCompatActivity implements QuizView
 
     @Override
     public void renderActionBarSubtitle(String subtitleText) {
-
-    }
-
-    @Override
-    public void checkPossibleAnswer(int radioButtonId) {
 
     }
 
